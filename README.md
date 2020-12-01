@@ -140,7 +140,7 @@ Here are the included (admin) endpoints:
 
 Let´s get started using Onify together with Blue Prism!
 
-## Authentication
+### Authentication
 
 Before you use the API endpoints, you need to be authenticated and have `authentication` token. 
 To generate a token, use the `POST /my/login` endpoint. Here is a curl example:
