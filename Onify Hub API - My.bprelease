@@ -1,0 +1,1021 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<bpr:release xmlns:bpr="http://www.blueprism.co.uk/product/release">
+  <bpr:name>Onify Hub API - My endpoints</bpr:name>
+  <bpr:release-notes>This is the Onify Hub API</bpr:release-notes>
+  <bpr:created>2020-11-26 14:37:49Z</bpr:created>
+  <bpr:package-id>42</bpr:package-id>
+  <bpr:package-name>Onify Hub API - My endpoints</bpr:package-name>
+  <bpr:user-created-by>RESTgen</bpr:user-created-by>
+  <bpr:contents count="1">
+    <webapiservice id="ba1094fb-e93d-4592-97a6-83ac9202a90a" name="Onify Hub API - My endpoints" enabled="true" xmlns="http://www.blueprism.co.uk/product/webapiservice">
+      <configuration baseurl="[Base URL]/api/v2" xmlns="">
+        <actions>
+          <action id="1" name="GET /my/audit" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[List my Audit records]]></description>
+            <request httpmethod="GET" urlpath="/my/audit?tag=[tag]&amp;item=[item]&amp;form=[form]&amp;query=[query]&amp;userid=[userid]&amp;fromdate=[fromdate]&amp;todate=[todate]&amp;startfrom=[startfrom]&amp;sort=[sort]&amp;metaonly=[metaonly]&amp;pagesize=[pagesize]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="tag" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Tag]]></description>
+              </actionparameter>
+              <actionparameter name="item" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Item key]]></description>
+              </actionparameter>
+              <actionparameter name="form" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="query" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[A Elasticsearch query that uses a query parser in order to parse its content. The query parses the input and splits text around operators. Each textual part is analyzed independently of each other.]]></description>
+              </actionparameter>
+              <actionparameter name="userid" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[User key]]></description>
+              </actionparameter>
+              <actionparameter name="fromdate" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[To date and time (Format = YYYY-MM-DD)]]></description>
+              </actionparameter>
+              <actionparameter name="todate" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[To date and time (Format = YYYY-MM-DD)]]></description>
+              </actionparameter>
+              <actionparameter name="startfrom" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Offset for pagination. When not provided, this method returns the first page only, which means startFrom = 0.]]></description>
+              </actionparameter>
+              <actionparameter name="sort" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[List of sort options (Default is '_score,desc')]]></description>
+              </actionparameter>
+              <actionparameter name="metaonly" expose="true" datatype="Flag">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Only return meta header, not records]]></description>
+              </actionparameter>
+              <actionparameter name="pagesize" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[A numeric value indicating the page size. This means how many records should be returned per page.]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="2" name="POST /my/audit" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Create Audit record]]></description>
+            <request httpmethod="POST" urlpath="/my/audit">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+                <httpheader name="Content-Type" value="application/json" />
+              </headers>
+              <bodycontent type="Template">
+                <template><![CDATA[{
+"title": "[title]",
+"name": "[name]",
+"form": "[form]",
+"tag": [tag],
+"item": [item],
+"data": [data],
+"trackingid": "[trackingid]"
+}]]></template>
+              </bodycontent>
+            </request>
+            <parameters>
+              <actionparameter name="title" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Title (or name) for the object]]></description>
+              </actionparameter>
+              <actionparameter name="name" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Name (or title) for the object]]></description>
+              </actionparameter>
+              <actionparameter name="form" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="tag" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[List of tags]]></description>
+              </actionparameter>
+              <actionparameter name="item" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="data" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="trackingid" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="3" name="GET /my/bulletins" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[List my Bulletins by workspace]]></description>
+            <request httpmethod="GET" urlpath="/my/bulletins?workspace=[workspace]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="workspace" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Workspace slug]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="4" name="GET /my/processes" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[List my Processes]]></description>
+            <request httpmethod="GET" urlpath="/my/processes?status=[status]&amp;sort=[sort]&amp;term=[term]&amp;startfrom=[startfrom]&amp;metaonly=[metaonly]&amp;pagesize=[pagesize]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="status" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="sort" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[List of sort options (Default is '_score,desc')]]></description>
+              </actionparameter>
+              <actionparameter name="term" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[A Elasticsearch query that uses a query parser in order to parse its content. The query parses the input and splits text around operators. Each textual part is analyzed independently of each other.]]></description>
+              </actionparameter>
+              <actionparameter name="startfrom" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Offset for pagination. When not provided, this method returns the first page only, which means startFrom = 0.]]></description>
+              </actionparameter>
+              <actionparameter name="metaonly" expose="true" datatype="Flag">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Only return meta header, not records]]></description>
+              </actionparameter>
+              <actionparameter name="pagesize" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[A numeric value indicating the page size. This means how many records should be returned per page.]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="5" name="GET /my/processes/[id]" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Get Process by id]]></description>
+            <request httpmethod="GET" urlpath="/my/processes/[id]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="id" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="6" name="GET /my/processes/[id]/status" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Get Process status]]></description>
+            <request httpmethod="GET" urlpath="/my/processes/[id]/status">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="id" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="7" name="GET /my/processes/[id]/state" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Get Process state]]></description>
+            <request httpmethod="GET" urlpath="/my/processes/[id]/state">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="id" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="8" name="POST /my/processes/start/[workflow]" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Start (Create) Process by workflow key]]></description>
+            <request httpmethod="POST" urlpath="/my/processes/start/[workflow]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+                <httpheader name="Content-Type" value="application/json" />
+              </headers>
+              <bodycontent type="Template">
+                <template><![CDATA[{
+"title": "[title]",
+"description": "[description]",
+"item": [item],
+"action": [action]
+}]]></template>
+              </bodycontent>
+            </request>
+            <parameters>
+              <actionparameter name="workflow" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="title" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Title (or name) for the object]]></description>
+              </actionparameter>
+              <actionparameter name="description" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Short description (picture in words) or account that describes the object.]]></description>
+              </actionparameter>
+              <actionparameter name="item" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="action" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="9" name="PUT /my/processes/[id]/status/[status]" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Updates Process status]]></description>
+            <request httpmethod="PUT" urlpath="/my/processes/[id]/status/[status]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+                <httpheader name="Content-Type" value="application/json" />
+              </headers>
+              <bodycontent type="Template">
+                <template><![CDATA[{
+"error": [error],
+"statuscode": [statuscode],
+"statusmessage": "[statusmessage]"
+}]]></template>
+              </bodycontent>
+            </request>
+            <parameters>
+              <actionparameter name="id" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="status" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="error" expose="true" datatype="Flag">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="statuscode" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="statusmessage" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="10" name="PUT /my/processes/[id]/state/[state]" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Update Process state]]></description>
+            <request httpmethod="PUT" urlpath="/my/processes/[id]/state/[state]?complete=[complete]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+                <httpheader name="Content-Type" value="application/json" />
+              </headers>
+              <bodycontent type="Template">
+                <template><![CDATA[{
+"done": [done],
+"error": [error],
+"skipped": [skipped],
+"statuscode": [statuscode],
+"statusmessage": "[statusmessage]",
+"link": "[link]",
+"link_text": "[link_text]"
+}]]></template>
+              </bodycontent>
+            </request>
+            <parameters>
+              <actionparameter name="id" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="state" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="complete" expose="true" datatype="Flag">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="done" expose="true" datatype="Flag">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="error" expose="true" datatype="Flag">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="skipped" expose="true" datatype="Flag">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="statuscode" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="statusmessage" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="link" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="link_text" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="11" name="GET /my/items/[workspace]" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Search Items by workspace]]></description>
+            <request httpmethod="GET" urlpath="/my/items/[workspace]?filter=[filter]&amp;term=[term]&amp;sort=[sort]&amp;startfrom=[startfrom]&amp;filteroperator=[filteroperator]&amp;metaonly=[metaonly]&amp;pagesize=[pagesize]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="workspace" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="filter" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Filters that should be applied to query]]></description>
+              </actionparameter>
+              <actionparameter name="term" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[A Elasticsearch query that uses a query parser in order to parse its content. The query parses the input and splits text around operators. Each textual part is analyzed independently of each other.]]></description>
+              </actionparameter>
+              <actionparameter name="sort" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[List of sort options (Default is '_score,desc')]]></description>
+              </actionparameter>
+              <actionparameter name="startfrom" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Offset for pagination. When not provided, this method returns the first page only, which means startFrom = 0.]]></description>
+              </actionparameter>
+              <actionparameter name="filteroperator" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[What operator to use for filters (AND or OR)]]></description>
+              </actionparameter>
+              <actionparameter name="metaonly" expose="true" datatype="Flag">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Only return meta header, not records]]></description>
+              </actionparameter>
+              <actionparameter name="pagesize" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[A numeric value indicating the page size. This means how many records should be returned per page.]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="16" name="GET /my/options/[key]" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[List Options by tags]]></description>
+            <request httpmethod="GET" urlpath="/my/options/[key]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="key" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="12" name="GET /my/items/[workspace]/[key]" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Get Item by workspace]]></description>
+            <request httpmethod="GET" urlpath="/my/items/[workspace]/[key]?sort=[sort]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="workspace" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="key" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="sort" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[List of sort options (Default is '_score,desc')]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="13" name="GET /my/items/[workspace]/export" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Export workspace items]]></description>
+            <request httpmethod="GET" urlpath="/my/items/[workspace]/export?filter=[filter]&amp;term=[term]&amp;sort=[sort]&amp;startfrom=[startfrom]&amp;filteroperator=[filteroperator]&amp;metaonly=[metaonly]&amp;pagesize=[pagesize]&amp;scrollId=[scrollId]&amp;pageId=[pageId]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="workspace" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="filter" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Filters that should be applied to query]]></description>
+              </actionparameter>
+              <actionparameter name="term" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[A Elasticsearch query that uses a query parser in order to parse its content. The query parses the input and splits text around operators. Each textual part is analyzed independently of each other.]]></description>
+              </actionparameter>
+              <actionparameter name="sort" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[List of sort options (Default is '_score,desc')]]></description>
+              </actionparameter>
+              <actionparameter name="startfrom" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Offset for pagination. When not provided, this method returns the first page only, which means startFrom = 0.]]></description>
+              </actionparameter>
+              <actionparameter name="filteroperator" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[What operator to use for filters (AND or OR)]]></description>
+              </actionparameter>
+              <actionparameter name="metaonly" expose="true" datatype="Flag">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Only return meta header, not records]]></description>
+              </actionparameter>
+              <actionparameter name="pagesize" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[A numeric value indicating the page size. This means how many records should be returned per page.]]></description>
+              </actionparameter>
+              <actionparameter name="scrollId" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Is used to retrieve the next batch of results from the scroll.]]></description>
+              </actionparameter>
+              <actionparameter name="pageId" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Page id for the scroll.]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="17" name="GET /my/options/tags/[tags]" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[List Options by tags]]></description>
+            <request httpmethod="GET" urlpath="/my/options/tags/[tags]?term=[term]&amp;startfrom=[startfrom]&amp;pagesize=[pagesize]&amp;sort=[sort]&amp;sortby=[sortby]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="tags" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="term" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[A Elasticsearch query that uses a query parser in order to parse its content. The query parses the input and splits text around operators. Each textual part is analyzed independently of each other.]]></description>
+              </actionparameter>
+              <actionparameter name="startfrom" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Offset for pagination. When not provided, this method returns the first page only, which means startFrom = 0.]]></description>
+              </actionparameter>
+              <actionparameter name="pagesize" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[A numeric value indicating the page size. This means how many records should be returned per page.]]></description>
+              </actionparameter>
+              <actionparameter name="sort" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Field to sort by]]></description>
+              </actionparameter>
+              <actionparameter name="sortby" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[How to sort (Ascending or Descending)]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="18" name="GET /my/agent/task/[id]/meta" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Get Agent task meta]]></description>
+            <request httpmethod="GET" urlpath="/my/agent/task/[id]/meta">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="id" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="19" name="PUT /my/agent/task/[id]/log" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Update Agent task by id]]></description>
+            <request httpmethod="PUT" urlpath="/my/agent/task/[id]/log">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+                <httpheader name="Content-Type" value="application/json" />
+              </headers>
+              <bodycontent type="Template">
+                <template><![CDATA[{
+"timestamp": "[timestamp]",
+"message": "[message]",
+"level": "[level]"
+}]]></template>
+              </bodycontent>
+            </request>
+            <parameters>
+              <actionparameter name="id" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="timestamp" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="message" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="level" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="20" name="GET /my/agent/task/[id]/result" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Get Agent task result]]></description>
+            <request httpmethod="GET" urlpath="/my/agent/task/[id]/result">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="id" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="21" name="GET /my/agent/task/[id]/events" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Get Agent task result]]></description>
+            <request httpmethod="GET" urlpath="/my/agent/task/[id]/events?size=[size]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="id" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="size" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="22" name="POST /my/agent/task/[id]/events" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Create event]]></description>
+            <request httpmethod="POST" urlpath="/my/agent/task/[id]/events">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+                <httpheader name="Content-Type" value="application/json" />
+              </headers>
+              <bodycontent type="Template">
+                <template><![CDATA[{
+"id": "[id]",
+"timestamp": "[timestamp]",
+"tag": [tag],
+"source": "[source]",
+"description": "[description]",
+"processid": "[processid]",
+"category": "[category]",
+"meta": {
+},
+"role": [role],
+"level": "[level]"
+}]]></template>
+              </bodycontent>
+            </request>
+            <parameters>
+              <actionparameter name="id" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="timestamp" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="tag" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[List of tags]]></description>
+              </actionparameter>
+              <actionparameter name="source" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="description" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Short description (picture in words) or account that describes the object.]]></description>
+              </actionparameter>
+              <actionparameter name="processid" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="category" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="meta" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="role" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[List of roles]]></description>
+              </actionparameter>
+              <actionparameter name="level" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="14" name="GET /my/items/[workspace]/[key]/events" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[List events by workspace item]]></description>
+            <request httpmethod="GET" urlpath="/my/items/[workspace]/[key]/events?query=[query]&amp;sort=[sort]&amp;level=[level]&amp;tag=[tag]&amp;category=[category]&amp;startfrom=[startfrom]&amp;metaonly=[metaonly]&amp;pagesize=[pagesize]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="workspace" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="key" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="query" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[A Elasticsearch query that uses a query parser in order to parse its content. The query parses the input and splits text around operators. Each textual part is analyzed independently of each other.]]></description>
+              </actionparameter>
+              <actionparameter name="sort" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[List of sort options (Default is '_score,desc')]]></description>
+              </actionparameter>
+              <actionparameter name="level" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="tag" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Tag]]></description>
+              </actionparameter>
+              <actionparameter name="category" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="startfrom" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Offset for pagination. When not provided, this method returns the first page only, which means startFrom = 0.]]></description>
+              </actionparameter>
+              <actionparameter name="metaonly" expose="true" datatype="Flag">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Only return meta header, not records]]></description>
+              </actionparameter>
+              <actionparameter name="pagesize" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[A numeric value indicating the page size. This means how many records should be returned per page.]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="15" name="POST /my/items/[workspace]/[key]/events" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Create event]]></description>
+            <request httpmethod="POST" urlpath="/my/items/[workspace]/[key]/events">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+                <httpheader name="Content-Type" value="application/json" />
+              </headers>
+              <bodycontent type="Template">
+                <template><![CDATA[{
+"id": "[id]",
+"taskid": "[taskid]",
+"processid": "[processid]",
+"timestamp": "[timestamp]",
+"tag": [tag],
+"source": "[source]",
+"description": "[description]",
+"category": "[category]",
+"meta": {
+},
+"role": [role],
+"level": "[level]"
+}]]></template>
+              </bodycontent>
+            </request>
+            <parameters>
+              <actionparameter name="workspace" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="key" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="id" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Unique (automatically generated) identifier]]></description>
+              </actionparameter>
+              <actionparameter name="taskid" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="processid" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="timestamp" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[To date and time (Format = YYYY-MM-DD)]]></description>
+              </actionparameter>
+              <actionparameter name="tag" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[List of tags]]></description>
+              </actionparameter>
+              <actionparameter name="source" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="description" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Short description (picture in words) or account that describes the object.]]></description>
+              </actionparameter>
+              <actionparameter name="category" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="meta" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="role" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[List of roles]]></description>
+              </actionparameter>
+              <actionparameter name="level" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="23" name="GET /my/agent/task/[id]/meta/[key]" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Get Agent task meta key]]></description>
+            <request httpmethod="GET" urlpath="/my/agent/task/[id]/meta/[key]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+              </headers>
+              <bodycontent type="None" />
+            </request>
+            <parameters>
+              <actionparameter name="id" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="key" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="24" name="POST /my/login" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[User Login]]></description>
+            <request httpmethod="POST" urlpath="/my/login">
+              <headers>
+                <httpheader name="Content-Type" value="application/json" />
+              </headers>
+              <bodycontent type="Template">
+                <template><![CDATA[{
+"username": "[username]",
+"password": "[password]"
+}]]></template>
+              </bodycontent>
+            </request>
+            <parameters>
+              <actionparameter name="username" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[You know, the Username]]></description>
+              </actionparameter>
+              <actionparameter name="password" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[Yes, we need a password also]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+          <action id="25" name="POST /my/connector/pipelines/[key]/run" enabled="true" enableRequestOutputParameter="false" disableSendingOfRequest="false">
+            <description><![CDATA[Run Pipeline]]></description>
+            <request httpmethod="POST" urlpath="/my/connector/pipelines/[key]/run?async=[async]">
+              <headers>
+                <httpheader name="authorization" value="[authorization]" />
+                <httpheader name="Content-Type" value="application/json" />
+              </headers>
+              <bodycontent type="Template">
+                <template><![CDATA[{
+"vars": {
+},
+"logLevel": "[logLevel]",
+"timeout": [timeout],
+"skipPurge": [skipPurge]
+}]]></template>
+              </bodycontent>
+            </request>
+            <parameters>
+              <actionparameter name="key" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="async" expose="true" datatype="Flag">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="vars" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="logLevel" expose="true" datatype="Text">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="timeout" expose="true" datatype="Number">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+              <actionparameter name="skipPurge" expose="true" datatype="Flag">
+                <initialvalue><![CDATA[]]></initialvalue>
+                <description><![CDATA[]]></description>
+              </actionparameter>
+            </parameters>
+            <outputparameters>
+              <parameters />
+              <code><![CDATA[]]></code>
+            </outputparameters>
+          </action>
+        </actions>
+        <commonparameters>
+          <actionparameter name="Base URL" expose="true" datatype="Text">
+            <initialvalue><![CDATA[]]></initialvalue>
+            <description><![CDATA[The base URL of the RESTful web service. The individual HTTP action paths are appended to this base URL.]]></description>
+          </actionparameter>
+          <actionparameter name="authorization" expose="true" datatype="Text">
+            <initialvalue><![CDATA[]]></initialvalue>
+            <description><![CDATA[User authorization token]]></description>
+          </actionparameter>
+        </commonparameters>
+        <commonheaders />
+        <commonauthentications>
+          <authentication type="0" />
+        </commonauthentications>
+        <commoncode>
+          <codeproperties code="// ‘The MIT License’ - © 2020 Blue Prism Limited - Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE" language="csharp">
+            <namespaces>
+              <namespace>System</namespace>
+              <namespace>System.Drawing</namespace>
+              <namespace>System.Data</namespace>
+            </namespaces>
+            <references>
+              <reference>System.dll</reference>
+              <reference>System.Data.dll</reference>
+              <reference>System.Xml.dll</reference>
+              <reference>System.Drawing.dll</reference>
+            </references>
+          </codeproperties>
+        </commoncode>
+        <configurationsettings>
+          <configurationsettings requesttimeout="10" authserverrequesttimeout="10" />
+        </configurationsettings>
+      </configuration>
+    </webapiservice>
+  </bpr:contents>
+</bpr:release>
