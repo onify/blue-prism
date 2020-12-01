@@ -7,12 +7,14 @@ Onify Hub integration (Web API definitions) for Blue Prism via Onify Hub REST AP
 ## What is Blue Prism?
 
 Blue Prism is a multinational software corporation that pioneered and makes enterprise robotic process automation (RPA) software that provides a digital workforce designed to automate complex, end-to-end operational activities.
+
 _For more information about Blue Prism, please visit https://www.blueprism.com._
 
 ## What is Onify?
 
 Onify brings together systems, objects and processes in a simple and searchable interface with 100% control and automation for the underlying systems of record. In practice, this means opening up role-based Self-Service for the users to systems that were previously unavailable to them, thereby increasing agility and cooperation in the organization between silos and with customers.
 Onify has been developed with user simplicity first meaning that the user roll-out is almost non-existent and Time to Value is achieved faster.
+
 _For more information about Onify, please visit https://onify.co._
 
 ## Use cases & scope
