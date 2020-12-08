@@ -46,8 +46,8 @@ Here is a list of the API endpoints that are included in this asset.
 
 #### My endpoints
 
-The My (`api/v2/my/*`) endpoints are used for logged in users in Onify.
-Here are the included (my) endpoints:
+The MY (`api/v2/my/*`) endpoints are used for logged in users in Onify.
+Here are the included endpoints:
 
 * `POST /my/login`
 * `GET /my/audit`
@@ -77,8 +77,8 @@ Here are the included (my) endpoints:
 
 #### Admin endpoints
 
-The My (`api/v2/admin/*`) endpoints are used for administration and configuration of Onify. User needs to be in the `admin` role to use these endpoints.
-Here are the included (admin) endpoints:
+The ADMIN (`api/v2/admin/*`) endpoints are used for administration and configuration of Onify. User needs to be in the `admin` role to use these endpoints.
+Here are the included endpoints:
 
 * `GET /admin/events`
 * `POST /admin/events`
